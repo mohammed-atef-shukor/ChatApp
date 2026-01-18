@@ -1,0 +1,7 @@
+<div class="bubble-container" [ngClass]="{'me': message.isMe, 'them': !message.isMe}">
+  <div class="bubble">
+    <div class="sender-name" *ngIf="!message.isMe">{{ message.sender }}</div>
+    <div class="message-text">{{ message.text }}</div>
+    <div class="timestamp">{{ message.timestamp | date:'shortTime' }}</div>
+  </div>
+</div>

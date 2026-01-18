@@ -1,0 +1,61 @@
+.input-container {
+    padding: 10px 16px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input-field {
+    flex: 1;
+}
+
+/* 1. Make the field a Pill Shape */
+::ng-deep .chat-input-field .mat-mdc-text-field-wrapper {
+    border-radius: 28px !important;
+    background-color: #354045 !important;
+    padding: 0 16px !important;
+    transition: background-color 0.2s ease;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    -ms-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+}
+
+/* 2. Remove the default Material Outline borders */
+::ng-deep .chat-input-field .mdc-notched-outline__leading,
+::ng-deep .chat-input-field .mdc-notched-outline__notch,
+::ng-deep .chat-input-field .mdc-notched-outline__trailing {
+    border: none !important;
+}
+
+/* 3. Focus State styling */
+::ng-deep .chat-input-field.mat-focused .mat-mdc-text-field-wrapper {
+
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+    /* Subtle glow on focus */
+}
+
+/* 4. The Send Button inside the field */
+.send-btn {
+    background-color: #3f51b5;
+    /* Primary color */
+    color: white !important;
+    transform: scale(0.85);
+    /* Slightly smaller to fit nicely */
+    transition: all 0.2s ease-in-out;
+}
+
+.send-btn:hover:not(:disabled) {
+    transform: scale(1);
+    background-color: #303f9f;
+}
+
+.send-btn:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e !important;
+}
+
+/* 5. Hide the subscript (space for error messages) to keep it compact */
+::ng-deep .chat-input-field .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+}

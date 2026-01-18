@@ -1,0 +1,19 @@
+<div class="input-container">
+  <mat-form-field appearance="outline" class="chat-input-field">
+    <input 
+      matInput 
+      [(ngModel)]="messageText" 
+      (keyup.enter)="sendMessage()" 
+      placeholder="Type a message..."
+      autocomplete="off">
+    
+    <button 
+      mat-icon-button 
+      matSuffix 
+      class="send-btn"
+      (click)="sendMessage()" 
+      [disabled]="!messageText().trim()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

@@ -1,0 +1,14 @@
+<div class="chat-wrapper">
+  <mat-toolbar color="primary" class="chat-header">
+    <mat-icon>chat</mat-icon>
+    <span class="title">Chat</span>
+  </mat-toolbar>
+
+  <div class="messages-viewport" #scrollFrame>
+    <app-messages-list [messages]="messages()"></app-messages-list>
+  </div>
+
+  <div class="input-area">
+    <app-message-input (send)="onSendMessage($event)"></app-message-input>
+  </div>
+</div>
